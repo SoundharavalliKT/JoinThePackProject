@@ -1,0 +1,25 @@
+.completed{
+    color: green;
+}
+
+.not_Completed{
+    color: red;
+}
+
+.parent{
+    height: 20vh;
+}
+
+.btn{
+    margin: 10px;
+}
+
+.txt{
+    margin: 10px;
+}
+
+.container{
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+}

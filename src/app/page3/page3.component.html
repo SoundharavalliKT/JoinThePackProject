@@ -1,0 +1,39 @@
+User Details Form
+<form class="container" (ngSubmit)="onSubmit()">
+    <div>
+        <label>Enter your Name : </label>
+        <input class="txt" type="text" name="username" [(ngModel)]="data.username" required />
+    </div>
+    <div>
+        <label>Enter your Age : </label>
+        <input class="txt" type="number" name="age" [(ngModel)]="data.age" required />
+    </div>
+    <div>
+        <label>Enter your City : </label>
+        <input class="txt" type="text" name="city" [(ngModel)]="data.city" required />
+    </div>
+    <div>
+        <label>Enter your email id : </label>
+        <input class="txt" type="text" name="email" [(ngModel)]="data.email" required />
+    </div>
+    <div>
+        <label>Enter your pet's name : </label>
+        <input class="txt" type="text" name="petName" [(ngModel)]="data.petName" required />
+    </div>
+    <div>
+        <label>Enter the breed of your pet : </label>
+        <input class="txt" type="text" name="petBreed" [(ngModel)]="data.petBreed" required />
+    </div>
+    <div>
+        <label>Enter your pet's age: </label>
+        <input class="txt" type="number" name="petAge" [(ngModel)]="data.petAge" required />
+    </div>
+    <div>
+        <label>Any specifications : </label>
+        <input class="txt" type="text" name="specifications" [(ngModel)]="data.specifications">
+    </div>
+    <input type="submit" (click)="onSubmit()">
+</form>
+
+<button class="btn" (click)="goToPage2()">Page2</button>
+<router-outlet></router-outlet>

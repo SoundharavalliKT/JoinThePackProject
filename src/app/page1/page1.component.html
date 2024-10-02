@@ -1,0 +1,60 @@
+<div class="container">
+<div>
+    To-Do List (Note : Green items in the list are Completed tasks, whereas red ones are pending tasks!!)
+</div>
+<div>
+<button class="btn" (click)="viewTodoList()">View the Initial To-Do List</button>
+<div *ngIf="viewList">
+    <div *ngFor="let item of toDoList" [ngClass]="{'completed': item.completed, 'not_Completed' : !item.completed }">
+        {{item.todo}}
+    </div>
+    <!-- <div class="parent">
+        <ag-grid-angular
+                style="width: 100%; height: 100%;"
+                class="ag-theme-alpine"
+                [rowData]="rowData"
+                [pagination]="true"
+                [columnDefs]="colDefs"
+                [defaultColDef]="defaultColDef"
+            />
+    </div> -->
+    <button class="btn" (click)="goTopreviousPage()" [(disabled)]="disablePrevBtn">Previous page</button>
+    <button class="btn" (click)="goTonextPage()" [(disabled)]="disableNextBtn">Next page</button>
+    
+</div>
+
+<button class="btn" (click)="randomTodoList()">Get a random To-Do </button>
+<div *ngIf="randomList">
+    <div [ngClass]="{'completed': randomTodo.completed, 'not_Completed' : !randomTodo.completed }">
+        {{randomTodo.todo}}
+    </div>
+</div>
+
+<button class="btn" (click)="addingTodo()">Add a To-Do to the list </button>
+<div *ngIf="addTodo">
+    Write a to-do task
+    <input type="text" (input)="onInputChange($event)">
+    User Id
+    <input class="txt" type="text" (input)="onIdChange($event)">
+    <button (click)="submitTodo()">Submit</button>
+</div>
+
+<button class="btn" (click)="deletingTodo()">Delete a To-Do task </button>
+<div *ngIf="deleteTodo">
+    Enter the id of to-do task to be deleted 
+    <input class="txt" type="text" (input)="ondeleteChange($event)">
+    <button (click)="onDeleteTodo()">Submit</button>
+</div>
+
+<button class="btn" (click)="updatingTodo()">Update a To-Do </button>
+<div *ngIf="updateTodo">
+    Enter the id of to-do task to be updated 
+    <input class="txt" type="text" (input)="onUpdateChange($event)">
+    <button (click)="onUpdateTodo()">Submit</button>
+</div>
+</div>
+</div>
+
+<button class="btn" (click)="goToPage2()">Page2</button>
+<button class="btn" (click)="goToPage3()">Page3</button>
+<router-outlet></router-outlet>

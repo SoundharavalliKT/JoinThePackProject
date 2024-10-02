@@ -1,0 +1,9 @@
+Dog's Gallery
+<div class="container">
+    <div *ngFor="let src of srcArr">
+        <img class="dogImage" src="{{src}}" alt="dogGallery">
+    </div>
+</div>
+
+<button class="btn" (click)="goToPage3()">Page3</button>
+<router-outlet></router-outlet>
